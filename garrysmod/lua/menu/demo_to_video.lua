@@ -245,7 +245,7 @@ local function DrawOverlay()
 	if ( VideoSettings.possmooth > 0 ) then table.insert( with, "Position Smoothing" ) end
 
 	if ( #with > 0 ) then
-		with = string.Implode( ", ", with )
+		with = table.concat( with, ", " )
 		info = info .. "with " .. with
 	end
 
