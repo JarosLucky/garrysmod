@@ -90,8 +90,12 @@ list.Set( "DesktopWindows", "PlayerEditor", {
 			local nicename = {}
 
 			for i, word in ipairs( string.Explode( "_", str ) ) do
-				if ( #word == 1 ) then nicename[i] = string.upper( string.sub( word, 1, 1 ) )
-				else nicename[i] = string.upper( string.sub( word, 1, 1 ) ) .. string.sub( word, 2 ) end
+				if ( #word == 1 ) then
+					nicename[i] = string.upper( string.sub( word, 1, 1 ) )
+					continue
+				end
+				
+				nicename[i] = string.upper( string.sub( word, 1, 1 ) ) .. string.sub( word, 2 )
 			end
 
 			return table.concat( nicename, " " )
