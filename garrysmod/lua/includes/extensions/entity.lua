@@ -493,15 +493,15 @@ if ( SERVER ) then
 	DOOR_STATE_AJAR = 4
 	
 	function meta:GetDoorState()
-		return self:GetSaveTable().m_eDoorState
+		return self:GetInternalVariable("m_eDoorState")
 	end
 	
 	function meta:IsDoorBlocked()
-		return IsValid( self:GetSaveTable().m_hBlocker ) 
+		return IsValid( self:GetInternalVariable("m_hBlocker") ) 
 	end
 	
 	function meta:IsDoorLocked()
-		return self:GetSaveTable().m_bLocked
+		return self:GetInternalVariable("m_bLocked")
 	end
 	
 	--
@@ -509,7 +509,7 @@ if ( SERVER ) then
 	--
 	
 	function meta:GetActivator()
-		return self:GetSaveTable().m_hActivator
+		return self:GetInternalVariable("m_hActivator")
 	end
 	
 	function meta:IsActivator( ent )
